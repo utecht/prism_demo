@@ -3,7 +3,7 @@
   <fieldset>
     <div class="pure-control-group">
       <label for="name">Original Cancer Diagnosis Site</label>
-      <select name="organ">
+      <select class="js-example-basic-single" name="organ">
       <% @results.each do |row| %>
         <option value="<%= row.organ %>">
           <%= row.name %>
@@ -16,3 +16,8 @@
     </div>
   </fieldset>
 </form>
+<script>
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+  });
+</script>

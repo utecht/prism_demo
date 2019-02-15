@@ -1,11 +1,15 @@
 <a href="/">New Search</a>
-<p>Patients returned: <%= @ids.count %></p>
-<p>Locations include</p>
-<ul>
-  <% @locations.each do |location| %>
-  <li><%= location %></li>
-  <% end %>
-</ul>
+<div id="collapse">
+  <h3>Patients returned: <%= @ids.count %></h3>
+  <div>
+    <p>Locations include</p>
+    <ul>
+      <% @locations.each do |location| %>
+      <li><%= location %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 <table class="pure-table">
   <thead>
     <tr>
@@ -25,3 +29,11 @@
   <% end %>
   </tbody>
 </table>
+<script>
+$(document).ready(function() {
+  $( "#collapse" ).accordion({
+    collapsible: true,
+    active: false
+  });
+});
+</script>
