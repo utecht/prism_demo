@@ -1,0 +1,9 @@
+downloadServerUrl=https://public.cancerimagingarchive.net/nbia-download/servlet/DownloadServlet
+includeAnnotation=false
+noOfrRetry=4
+databasketId=manifest-1531504498563.tcia
+manifestVersion=3.0
+ListOfSeriesToDownload=
+<% @series.each do |row| %>
+<%= row[:series_instance_uid] %>
+<% end %>

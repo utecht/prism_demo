@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Sparqly PRISM</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  </head>
+  <body>
+    <a href="/">New Search</a>
+    <p>Patients returned: <%= @ids.count %></p>
+    <p>Locations include</p>
+    <ul>
+      <% @locations.each do |location| %>
+      <li>
+      <%= location %>
+      </li>
+      <% end %>
+    </ul>
+    <table class="pure-table">
+      <thead>
+        <tr>
+        <% @other.first.each_key do |key| %>
+          <th><%= key %></th>
+        <%end%>
+        </tr>
+      </thead>
+      <tbody>
+      <% @other.each do |row| %>
+        <tr>
+          <% row.values.each do |value|  %>
+          <td><%= value %></td>
+          <% end %>
+          <td><a href="/to_download/<%= row[:series_instance_uid] %>">[Download]</a></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </body>
+</html>
