@@ -1,7 +1,7 @@
-<a href="/">New Search</a>
-<div id="collapse">
-  <h3>Patients returned: <%= @ids.count %></h3>
-  <div>
+<div class="accordeon">
+  <input type="checkbox" name="accordeon-title" class="accordeon-checkbox" id="accordeon-title" />
+  <label for="accordeon-title" class="accordeon-title-label">Patients returned: <%= @ids.count %></label>
+  <div class="accordeon-content">
     <p>Locations include</p>
     <ul>
       <% @locations.each do |location| %>
@@ -29,11 +29,3 @@
   <% end %>
   </tbody>
 </table>
-<script>
-$(document).ready(function() {
-  $( "#collapse" ).accordion({
-    collapsible: true,
-    active: false
-  });
-});
-</script>

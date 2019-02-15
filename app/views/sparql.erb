@@ -1,8 +1,7 @@
-<h2>PRISM SPARQL Search</h2>
 <form method="POST" class="pure-form pure-form-aligned">
   <fieldset>
     <div class="pure-control-group">
-      <label for="name">Original Cancer Diagnosis Site</label>
+      <label for="name">Cancer Site</label>
       <select class="js-example-basic-single" name="organ">
       <% @results.each do |row| %>
         <option value="<%= row.organ %>">
