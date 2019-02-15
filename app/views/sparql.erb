@@ -1,26 +1,18 @@
-<html>
-  <head>
-    <title>Sparqly PRISM</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-  </head>
-  <body>
-    <h2>PRISM SPARQL Search</h2>
-    <form method="POST" class="pure-form pure-form-aligned">
-      <fieldset>
-        <div class="pure-control-group">
-          <label for="name">Original Cancer Diagnosis Site</label>
-          <select name="organ">
-          <% @results.each do |row| %>
-            <option value="<%= row.organ %>">
-              <%= row.name %>
-            </option>
-          <% end %>
-          </select>
-        </div>
-        <div class="pure-controls">
-          <button type="submit" class="pure-button pure-button-primary">Search</button>
-        </div>
-      </fieldset>
-    </form>
-  </body>
-</html>
+<h2>PRISM SPARQL Search</h2>
+<form method="POST" class="pure-form pure-form-aligned">
+  <fieldset>
+    <div class="pure-control-group">
+      <label for="name">Original Cancer Diagnosis Site</label>
+      <select name="organ">
+      <% @results.each do |row| %>
+        <option value="<%= row.organ %>">
+          <%= row.name %>
+        </option>
+      <% end %>
+      </select>
+    </div>
+    <div class="pure-controls">
+      <button type="submit" class="pure-button pure-button-primary">Search</button>
+    </div>
+  </fieldset>
+</form>
